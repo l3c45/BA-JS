@@ -714,23 +714,82 @@ const stringArrayDos = () => {
   console.log(arr.join());
 };
 
-// Unión, intersección y conteo
+///// Unión, intersección y conteo //////
 
 //     Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la intersección de ambos elementos. (Ejemplo: [1,2,3] unión [1,2,4] = [1,2]
 
+const interseccion = () => {
+  let a = ["uno", "dos", "casa", "auto", "pajaro"];
+  let b = ["cuatro", "ocho", "dos", "casa", "avion"];
+
+  let c = a.filter((item) => b.indexOf(item) != -1);
+
+  console.log(c);
+};
 //     Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la unión de ambos elementos, (Ejemplo: [1,2,3] unión [1,2,4] = [1,1,2,2,3,4]
+
+const unionArray = () => {
+  let a = ["uno", "dos", "casa", "auto", "pajaro"];
+  let b = ["cuatro", "ocho", "dos", "casa", "avion"];
+  let c = [...a, ...b];
+
+  console.log(c);
+};
 
 //     El usuario ingresa dos conjuntos de números separados por coma, el programa debe determinar si ambos conjuntos tienen la misma cantidad de números.
 
+const sonIguales = () => {
+  let a = prompt("ingrese numero separados por coma");
+  let b = prompt("ingrese numero separados por coma");
+
+  a.split(",").length == b.split(",").length
+    ? console.log("tiene la misma cantidad de numeros")
+    : console.log(" NO tiene la misma cantidad de numeros");
+};
+
 //     El usuario ingresa dos conjuntos de números separados por coma, si ambos conjuntos tienen la misma cantidad de elementos mostrar un arreglo que contenga la suma de cada elemento. (Ejemplo: [1,2,3] + [2,3,4] = [3,5,7])
+const sumacadaelemento = () => {
+  let a = prompt("ingrese numero separados por coma");
+  let b = prompt("ingrese numero separados por coma");
+
+  a.split(",").length == b.split(",").length
+    ? console.log(
+        a
+          .split(",")
+          .map((item, index) => Number(b.split(",")[index]) + Number(item))
+      )
+    : console.log(" NO tiene la misma cantidad de numeros");
+};
 
 // Filtrando datos en arreglo
 
 //     Crear una función que reciba un arreglo con números y devuelva un nuevo arreglo con solo los números pares, hint: utilizar reduce()
+const soloPares = (n) => {
+  const resultado = n.reduce((previousValue, currentValue) => {
+    if (currentValue % 2 == 0) {
+      previousValue.push(currentValue);
+    }
+    return previousValue;
+  }, []);
+
+  console.log(resultado);
+};
 
 //     Crear una función que reciba un arreglo con palabras, crear un nuevo arreglo que contenga solo las palabras que empiezan con una vocal.
 
-// Ordenamiento
+const soloVocal = (n) => {
+  const vocales = ["a", "e", "i", "o", "u"];
+
+  const resultado = n.reduce((previousValue, currentValue) => {
+    if (vocales.includes(currentValue.toLowerCase()[0])) {
+      previousValue.push(currentValue);
+    }
+    return previousValue;
+  }, []);
+
+  console.log(resultado);
+};
+///// Ordenamiento /////
 
 //     Crear un método que permite intercambiar las posiciones de dos elementos de un arreglo en base a sus índices ej:
 
