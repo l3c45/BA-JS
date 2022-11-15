@@ -395,7 +395,6 @@ const perfectosN = () => {
   }
 };
 
-
 ////// Patrones con Loop anidados /////
 
 // Dibujar los siguientes patrones ocupando document.write, para rellenar los espacios vacíos se debe imprimir un espacio vacío.
@@ -409,14 +408,13 @@ const perfectosN = () => {
 // *****
 
 const CuadradoLleno = () => {
-  for (i=1; i<=5; i++){
-    for (j=0; j<5; j++){
+  for (i = 1; i <= 5; i++) {
+    for (j = 0; j < 5; j++) {
       document.write("*");
     }
     document.write("<br/>");
   }
 };
-
 
 // Cuadrado hueco:
 
@@ -426,24 +424,18 @@ const CuadradoLleno = () => {
 // *   *
 // *****
 
-
 const CuadradoHueco = () => {
-  for (i=1; i<=5; i++){
-
-    for (j=0; j<5; j++){
-
-      if (i==1||i==5){
-        document.write("*")
-      }else{
-        if(j==0||j==4){
-          document.write("*")
-        }else{
-          document.write("_")
+  for (i = 1; i <= 5; i++) {
+    for (j = 0; j < 5; j++) {
+      if (i == 1 || i == 5) {
+        document.write("*");
+      } else {
+        if (j == 0 || j == 4) {
+          document.write("*");
+        } else {
+          document.write("_");
         }
-
       }
-      
-     ;
     }
     document.write("<br/>");
   }
@@ -460,31 +452,22 @@ const CuadradoHueco = () => {
 // * * * * * * * *
 //  * * * * * * *
 
-
 const ajedrez = () => {
-  for (i=1; i<=15; i++){
-    for (j=0; j<15; j++){
-
-      if(i%2==0){
-
-        if(j%2==0){
-          document.write("*")
-        }else{
-          document.write(" .")
+  for (i = 1; i <= 15; i++) {
+    for (j = 0; j < 15; j++) {
+      if (i % 2 == 0) {
+        if (j % 2 == 0) {
+          document.write("*");
+        } else {
+          document.write(" .");
         }
-
-      }else{
-
-        if(j%2==0){
-          document.write(" .")
-        }else{
-          document.write("*")
+      } else {
+        if (j % 2 == 0) {
+          document.write(" .");
+        } else {
+          document.write("*");
         }
-
       }
-
-      
-      
     }
     document.write("<br/>");
   }
@@ -507,8 +490,8 @@ const ajedrez = () => {
 // *****
 
 const piramideIzq = () => {
-  for (i=1; i<=5; i++){
-    for (j=0; j<i; j++){
+  for (i = 1; i <= 5; i++) {
+    for (j = 0; j < i; j++) {
       document.write("*");
     }
     document.write("<br/>");
@@ -517,21 +500,29 @@ const piramideIzq = () => {
 
 // Pirámide centrada
 
-// *
-// ***
-// *****
-// *******
+//     *
+//    ***
+//   *****
+//  *******
 // *********
 
 const piramidecentr = () => {
-  for (i=1; i<=5; i++){
-    for (j=0; j<i+4; j++){
-      document.write("*");
+  let positivo = 5;
+  let negativo = 5;
+
+  for (i = 1; i <= 5; i++) {
+    for (j = 1; j <= 9; j++) {
+      if (j >= negativo && j <= positivo) {
+        document.write("*");
+      } else {
+        document.write("-");
+      }
     }
+    positivo += 1;
+    negativo -= 1;
     document.write("<br/>");
   }
 };
-
 
 // Pirámide invertida
 
@@ -541,4 +532,295 @@ const piramidecentr = () => {
 // ***
 // *
 
+const piramideInvertida = () => {
+  let positivo = 9;
+  let negativo = 1;
+
+  for (i = 1; i <= 5; i++) {
+    for (j = 1; j <= 9; j++) {
+      if (j >= negativo && j <= positivo) {
+        document.write("*");
+      } else {
+        document.write("-");
+      }
+    }
+    positivo -= 1;
+    negativo += 1;
+    document.write("<br/>");
+  }
+};
+
 // Diamante:
+
+const diamante = () => {
+  let positivo = 5;
+  let negativo = 5;
+
+  for (i = 1; i <= 4; i++) {
+    for (j = 1; j <= 9; j++) {
+      if (j >= negativo && j <= positivo) {
+        document.write("*");
+      } else {
+        document.write("-");
+      }
+    }
+
+    positivo += 1;
+    negativo -= 1;
+    document.write("<br/>");
+  }
+
+  positivo = 9;
+  negativo = 1;
+
+  for (i = 1; i <= 5; i++) {
+    for (j = 1; j <= 9; j++) {
+      if (j >= negativo && j <= positivo) {
+        document.write("*");
+      } else {
+        document.write("-");
+      }
+    }
+    positivo -= 1;
+    negativo += 1;
+    document.write("<br/>");
+  }
+};
+
+//// Funciones /////
+
+//     Crear una función que reciba un valor cualquiera y lo muestre ocupando console.log(), llamar a la función pasando el valor 5
+
+const muestra5 = (n) => {
+  console.log(n);
+};
+
+//muestra5(5)
+
+//     La siguiente función devuelve undefined en lugar de la multiplicación, se pide arreglarla
+
+function multiply(a, b) {
+  return a * b;
+}
+
+//     Crear una función que reciba dos valores y devuelva la suma de ellos.
+
+const sumaDos = (n, m) => {
+  console.log(n + m);
+};
+
+//     Crear una función que reciba un número entero y muestre un error si el tipo de dato pasado es de otro tipo.
+
+const errorTipo = (n) => {
+  isNaN(n) && console.log("error");
+};
+//     Crear una función autoejecutable que muestre "muuu" en pantalla
+
+(function () {
+  console.log("muuuu");
+})();
+
+/////// Array ////////
+
+//     Dado el array = [1,2,3,4,5,6]
+const arrayEjercicio = [1, 2, 3, 4, 5, 6];
+//         Iterar por todos los elementos dentro de un array utilizando while y mostrarlos en pantalla.
+const iterarUno = () => {
+  let contador = 0;
+  while (contador < arrayEjercicio.length) {
+    console.log(arrayEjercicio[contador]);
+    contador++;
+  }
+};
+
+//         Iterar por todos los elementos dentro de un array utilizando for y mostrarlos en pantalla.
+const iterarDos = () => {
+  for (let index = 0; index < arrayEjercicio.length; index++) {
+    console.log(arrayEjercicio[index]);
+  }
+};
+
+//         Iterar por todos los elementos dentro de un array utilizando .forEach y mostrarlos en pantalla.
+
+const iterarTres = () => {
+  arrayEjercicio.forEach((item) => console.log(item));
+};
+//         Mostrar todos los elementos dentro de un array sumándole uno a cada uno.
+
+const iterarCuatro = () => {
+  arrayEjercicio.forEach((item) => console.log(item + 1));
+};
+
+//         Generar una copia de un array pero con todos los elementos incrementado en 1.
+
+const iterarCinco = () => {
+  let newArr = arrayEjercicio.map((item) => item + 1);
+  console.log(newArr);
+};
+//         Calcular el promedio
+
+const iterarSeis = () => {
+  let newArr = arrayEjercicio.reduce((acumulador, siguienteValor) => {
+    return acumulador + siguienteValor;
+  }, 0);
+  console.log(newArr / arrayEjercicio.length);
+};
+
+//     Crear un array vacío, luego generar 20 números al azar y guardarlos en un array.
+const iterarSiete = () => {
+  let arr = [];
+
+  for (let index = 0; index < 20; index++) {
+    let number = (Math.random() * 100).toFixed();
+    arr.push(number);
+  }
+  console.log(arr);
+};
+
+//     Crear un array vacío, luego generar N números al azar y guardarlos en un array, N es introducido por el usuario a través de un prompt.
+
+const iterarOcho = () => {
+  let n = prompt("ingrese cantidad de numeros");
+  let arr = [];
+
+  for (let index = 0; index < n; index++) {
+    let number = (Math.random() * 100).toFixed();
+    arr.push(number);
+  }
+  console.log(arr);
+};
+//     Dado un array que contiene ["azul", "amarillo", "rojo", "verde", "café", "rosa"] determinar si un color introducido por el usuario a través de un prompt se encuentra dentro del array o no.
+
+const iterarNueve = () => {
+  let n = prompt("ingrese un color");
+  let arr = ["azul", "amarillo", "rojo", "verde", "café", "rosa"];
+
+  arr.includes(n) ? console.log("tiene") : console.log("no tiene");
+};
+
+/////  String y arrays //////
+
+//     El usuario ingrese un string con varias palabras separadas por coma en un popup y se deben convertir en un array, (el usuario ingresa: "1,2,3,4,5" y se convierte en [1,2,3,4,5])
+const stringArray = () => {
+  let n = prompt("ingrese palabras separadas por coma (,)");
+
+  console.log(n.split(","));
+};
+//     Convertir un array ingresado dentro del código en un string (existe un método en javascript para hacerlo)
+
+const stringArrayDos = () => {
+  let arr = ["uno", "dos", "casa", "auto"];
+
+  console.log(arr.join());
+};
+
+// Unión, intersección y conteo
+
+//     Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la intersección de ambos elementos. (Ejemplo: [1,2,3] unión [1,2,4] = [1,2]
+
+//     Existen dos arrays, cada uno con 5 palabras, generar un nuevo array con la unión de ambos elementos, (Ejemplo: [1,2,3] unión [1,2,4] = [1,1,2,2,3,4]
+
+//     El usuario ingresa dos conjuntos de números separados por coma, el programa debe determinar si ambos conjuntos tienen la misma cantidad de números.
+
+//     El usuario ingresa dos conjuntos de números separados por coma, si ambos conjuntos tienen la misma cantidad de elementos mostrar un arreglo que contenga la suma de cada elemento. (Ejemplo: [1,2,3] + [2,3,4] = [3,5,7])
+
+// Filtrando datos en arreglo
+
+//     Crear una función que reciba un arreglo con números y devuelva un nuevo arreglo con solo los números pares, hint: utilizar reduce()
+
+//     Crear una función que reciba un arreglo con palabras, crear un nuevo arreglo que contenga solo las palabras que empiezan con una vocal.
+
+// Ordenamiento
+
+//     Crear un método que permite intercambiar las posiciones de dos elementos de un arreglo en base a sus índices ej:
+
+//      arr = [1,2,3]
+//      swap(arr, 0, 1)
+//      console.log(arr) // [2,1,3]
+
+//     Realizar el mismo ejercicio anterior pero que en esta ocasión devuelva un arreglo nuevo con los datos cambiados.
+
+//      arr = [1,2,3]
+//      new_arr = swap(arr, 0, 1)
+//      console.log(arr) // [1,2,3]
+//      console.log(new_arr) // [2,1,3]
+
+//     Crear una función que reciba un arreglo y que cree uno nuevo con todos los elementos ordenados de menor a mayor, (sin ocupar el método .sort)
+
+//     Crear una función que reciba un arreglo y que cree uno nuevo con todos los elementos ordenados de mayor a menor.
+
+// Arreglos de arreglos
+
+//     Crear una función que permite aplanar un arreglo dado, Ejemplo:
+
+//      var arr = [[1,2,3],[4,5,6],[7,8,9]];
+//      console.log(aplanar(arr)); // [1,2,3,4,5,6,7,8,9]
+
+//     Crear una función que divida un arreglo en dos partes con la misma cantidad de elementos (o una diferencia de máximo un elemento) y devuelva un arreglo que contenga al grupo1 y al grupo2
+
+//      var arr = [1,2,3,4,5,6,7,8];
+//      console.log(split(arr)); // [[1,2,3,4], [5,6,7,8]]
+
+// Matrices
+
+//     Recorrer un arreglo de arreglos para mostrarlo como una matriz, ejemplo [[1,1],[2,2]] se mostraría de la siguiente forma:
+
+// 1 	1
+// 2 	2
+
+//     Sumar [[1,1],[2,2]] con [[3,1],[3,2]].
+
+//     Contar la cantidad de elementos dentro de una matriz.
+
+//     Multiplicar una matriz por un escalar, si la matriz inicial es [[1,2,3],[4,5,6]], al multiplicarla por dos deberíamos obtener [[2,4,6],[8,10,12]].
+
+//     Encontrar el número mayor en una matriz.
+
+//     Determinar si un determinado número se encuentra dentro de una matriz o no.
+
+//     Devolver la suma de todos los elementos en la diagonal de la matriz.
+
+//     Mostrar la transpuesta de una matriz, o sea dado:
+//     1 	2 	3
+//     4 	5 	6
+//     7 	8 	9
+
+//     Debería quedar como:
+//     1 	4 	7
+//     2 	5 	8
+//     3 	6 	9
+
+// Funciones y arreglos
+
+//     Crear una función que reciba un arreglo como parámetro y devuelva una copia del arreglo.
+
+//     Crear una función que devuelva el promedio de un arreglo, en caso de que el arreglo esté vacío debe devolver cero.
+
+//     Crear una función que calcule el promedio dentro de un arreglo pero dentro de un rango, esta función recibe el arreglo, un punto de partida y uno de termino y devuelve el promedio de los valores dentro del rango especificado.
+
+// ## Objetos
+
+//     Personas
+
+//         Crear un objeto literal persona con nombre y edad y una método que determine si es mayor de edad o no.
+
+//         Crear una función constructora que permita crear objetos del tipo personas pasándole solo un nombre y edad, agregar el método.
+
+//         Crear un array que contenga varios objetos persona
+
+//         Crear una función que reciba el array y devuelva la edad promedio del grupo de personas.
+
+//     Teléfono
+//         Crear una función constructora que devuelva objetos del tipo teléfono, como argumento debe recibir un número de teléfono, el objeto creado tiene el número de llamadas que debe ser inicializado en cero y un método llamar que debe aumentar el número de llamados en uno.
+
+//     Puntos y líneas
+//         Crear la función constructura punto que recibe un par de coordenadas (x,y) y devuelve un objeto punto en esa posición.
+//         Crear la función constructora recta que recibe como argumento 2 puntos.
+
+// ## DOM
+
+//     Utilizando getElementById y innerHTML transformar el emoticon en un smiley
+
+//      <p id="demo"> :( </p>
+
+//     Utilizando la instrucción setInterval mostrar la hora exacta y actualizarla cada segundo.
