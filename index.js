@@ -796,6 +796,16 @@ const soloVocal = (n) => {
 //      arr = [1,2,3]
 //      swap(arr, 0, 1)
 //      console.log(arr) // [2,1,3]
+const swap = (arr, n, m) => {
+  let newArr = [...arr];
+  newArr.splice(m, 0, arr[n]);
+  newArr.splice(m + 1, 1);
+
+  newArr.splice(n, 0, arr[m]);
+  newArr.splice(n + 1, 1);
+
+  console.log(newArr);
+};
 
 //     Realizar el mismo ejercicio anterior pero que en esta ocasión devuelva un arreglo nuevo con los datos cambiados.
 
@@ -804,30 +814,65 @@ const soloVocal = (n) => {
 //      console.log(arr) // [1,2,3]
 //      console.log(new_arr) // [2,1,3]
 
+const narrSwap = (arr, n, m) => {
+  let newArr = [...arr];
+  newArr.splice(m, 0, arr[n]);
+  newArr.splice(m + 1, 1);
+
+  newArr.splice(n, 0, arr[m]);
+  newArr.splice(n + 1, 1);
+
+  return newArr;
+};
+
+let a = narrSwap([1, 2, 3], 0, 1);
 //     Crear una función que reciba un arreglo y que cree uno nuevo con todos los elementos ordenados de menor a mayor, (sin ocupar el método .sort)
 
 //     Crear una función que reciba un arreglo y que cree uno nuevo con todos los elementos ordenados de mayor a menor.
 
-// Arreglos de arreglos
+const ordenar = (arr) => {
+  console.log(arr.sort((a, b) => a - b));
+};
+
+///// Arreglos de arreglos  ////////
 
 //     Crear una función que permite aplanar un arreglo dado, Ejemplo:
 
 //      var arr = [[1,2,3],[4,5,6],[7,8,9]];
 //      console.log(aplanar(arr)); // [1,2,3,4,5,6,7,8,9]
-
+const aplanar = (arr) => {
+  const resultado = arr.flat();
+  console.log(resultado);
+};
 //     Crear una función que divida un arreglo en dos partes con la misma cantidad de elementos (o una diferencia de máximo un elemento) y devuelva un arreglo que contenga al grupo1 y al grupo2
 
 //      var arr = [1,2,3,4,5,6,7,8];
 //      console.log(split(arr)); // [[1,2,3,4], [5,6,7,8]]
 
-// Matrices
+const divideArr = (arr) => {
+  const resultado = [
+    arr.slice(0, (arr.length / 2).toFixed()),
+    arr.slice((arr.length / 2).toFixed(), arr.length),
+  ];
+  console.log(resultado);
+};
+////// Matrices  //////
 
 //     Recorrer un arreglo de arreglos para mostrarlo como una matriz, ejemplo [[1,1],[2,2]] se mostraría de la siguiente forma:
 
 // 1 	1
 // 2 	2
 
+const matriz = (arr=[[1,1],[2,2]]) => {
+ 
+  console.table(arr);
+};
+
 //     Sumar [[1,1],[2,2]] con [[3,1],[3,2]].
+const sumarArray = (a=[[1,1],[2,2]] ,b=[[3,1],[3,2]]) => {
+ 
+  console.table(arr);
+};
 
 //     Contar la cantidad de elementos dentro de una matriz.
 
